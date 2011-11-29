@@ -1,0 +1,7 @@
+header
+    if (everyauth.loggedIn)
+        div.user
+            if (everyauth.twitter)
+                div #{everyauth.twitter.user.screen_name}
+            else
+                div #{everyauth.user.email}

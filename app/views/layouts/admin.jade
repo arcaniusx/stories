@@ -1,0 +1,32 @@
+extends ../layouts/base
+
+block css
+    link(rel='stylesheet', href='/stylesheets/admin/style.css')
+
+block scripts
+    script(src='/javascripts/vendor/jsviews/jsrender.js')
+    script(src='/javascripts/vendor/jsviews/jquery.observable.js')
+    script(src='/javascripts/vendor/jsviews/jquery.views.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/admin/admin.js')
+
+block debug
+    div.debug
+        h3 Connected Admin
+        div.debug-admin
+        h3 Connected Users
+        div.debug-users
+        h3 Available Stories
+        div.debug-stories
+
+block templates
+    div.templates
+        script(id="storyTmpl", type="text/x-jquery-tmpl")
+            div.story(id="story-{{=id}}")
+                h3(data-getfrom="[id]") {{=id}}
+                ul
+                    li.owner(data-getfrom="[owner]") {{=owner}}
+                    {{each contributors content="#storyContributorTmpl"}}
+
+        script(id="storyContributorTmpl", type="text/x-jquery-tmpl")
+            li(data-getfrom="[name]") {{=name}}

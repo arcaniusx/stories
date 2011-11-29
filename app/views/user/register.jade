@@ -1,0 +1,26 @@
+h1 Register
+
+- if ('undefined' !== typeof errors && errors.length)
+    .alert-message.block-message.error
+        ul#errors
+            - each error in errors
+                li.error= error
+form(action='/auth/register', method='POST')
+    .clearfix
+        label(for=everyauth.password.loginFormFieldName) Login
+        .input
+            input(type='text', name=everyauth.password.loginFormFieldName, value=userParams[everyauth.password.loginFormFieldName])
+    .clearfix
+        label(for=everyauth.password.passwordFormFieldName) Password
+        .input
+            input(type='password', name=everyauth.password.passwordFormFieldName)
+    .clearfix
+        label(for='name.first') First Name
+        .input
+            input(type='text', name='name.first')
+    .clearfix
+        label(for='name.last') Last Name
+        .input
+            input(type='text', name='name.last')
+    .actions
+        input(class="btn primary", type='submit') Register

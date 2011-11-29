@@ -1,0 +1,10 @@
+div.stories2
+    each story in stories
+        div.story
+            h3 #{story.id}
+            ul
+                li.owner #{story.owner}
+        
+div.stories
+    each story in stories
+        div.story #{story.id}

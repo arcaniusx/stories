@@ -1,0 +1,17 @@
+h1 Login
+
+- if ("undefined" !== typeof errors && errors.length)
+    ul#errors
+    - each error in errors
+        li.error= error
+form(action="/auth/login", method="POST")
+    .clearfix
+        label(for=everyauth.password.loginFormFieldName) Login
+        .input
+            input(type="text", name=everyauth.password.loginFormFieldName, value=email)
+    .clearfix
+        label(for=everyauth.password.passwordFormFieldName) Password
+        .input
+            input(type="password", name=everyauth.password.passwordFormFieldName)
+    .actions
+        input(class="btn primary", type="submit") Login

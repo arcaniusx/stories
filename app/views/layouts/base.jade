@@ -1,0 +1,25 @@
+!!! 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/base.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+        block css
+
+        script(src='/javascripts/vendor/jquery/jquery-1.6.min.js')
+
+        block scripts
+        
+    body
+        block debug
+            div.debug
+                h3 Connected Users
+                div.users
+        
+        div.page
+            include ../components/header
+            div.content
+                != body
+
+        block templates
